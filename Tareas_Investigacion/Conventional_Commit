@@ -1,0 +1,119 @@
+# 🧠 **Investigación: Git Commit y Conventional Commits**
+
+---
+
+## 🏷️ **Definición general**
+
+Un **git commit** es una **instantánea (snapshot)** del estado actual de un proyecto.  
+Cada commit registra los cambios realizados en el código, junto con un **mensaje descriptivo** que explica qué se modificó y por qué.
+
+> 📸 En palabras simples: un *commit* es como sacar una foto del progreso de tu proyecto para poder volver a ese punto más adelante.
+
+---
+
+## ⚙️ **Cómo funciona un commit**
+
+1. Realizas modificaciones en uno o más archivos de tu proyecto.  
+2. Preparas los archivos para guardar con:
+   ```bash
+   git add .
+---
+
+# 🧰 **Comandos más utilizados en Git**
+
+Git ofrece una gran variedad de comandos, pero algunos son esenciales para el trabajo diario.  
+A continuación se resumen los más usados, clasificados por categoría y con ejemplos prácticos.
+
+---
+
+## 📦 **Inicialización y configuración**
+
+| Comando | Descripción | Ejemplo |
+|----------|--------------|---------|
+| `git init` | Crea un nuevo repositorio Git en la carpeta actual. | `git init` |
+| `git config` | Configura tu nombre, correo o editor predeterminado. | `git config --global user.name "Diego Celis"` |
+| `git config --list` | Muestra toda la configuración actual. | `git config --list` |
+| `git help <comando>` | Muestra la ayuda oficial del comando indicado. | `git help commit` |
+
+---
+
+## 📂 **Estados y seguimiento**
+
+| Comando | Descripción | Ejemplo |
+|----------|--------------|---------|
+| `git status` | Muestra el estado actual del repositorio (archivos modificados, pendientes, etc.). | `git status` |
+| `git add <archivo>` | Agrega un archivo al área de preparación (*staging area*). | `git add index.html` |
+| `git add .` | Agrega todos los cambios detectados. | `git add .` |
+| `git rm <archivo>` | Elimina un archivo del repositorio. | `git rm viejo.txt` |
+| `git mv <archivo>` | Renombra o mueve un archivo. | `git mv app.js src/app.js` |
+
+---
+
+## 🧱 **Commits y mensajes**
+
+| Comando | Descripción | Ejemplo |
+|----------|--------------|---------|
+| `git commit -m "mensaje"` | Crea un commit con un mensaje corto. | `git commit -m "fix(api): corrige error en login"` |
+| `git commit -am "mensaje"` | Agrega y commitea todos los cambios en seguimiento. | `git commit -am "feat(core): agrega validación"` |
+| `git log` | Muestra el historial de commits. | `git log --oneline` |
+| `git show <id>` | Muestra los detalles de un commit específico. | `git show a4c2f7e` |
+
+---
+
+## 🌿 **Ramas (branches)**
+
+| Comando | Descripción | Ejemplo |
+|----------|--------------|---------|
+| `git branch` | Muestra todas las ramas locales. | `git branch` |
+| `git branch <nombre>` | Crea una nueva rama. | `git branch dev` |
+| `git checkout <rama>` | Cambia a una rama existente. | `git checkout main` |
+| `git checkout -b <rama>` | Crea y cambia a una nueva rama. | `git checkout -b feature/login` |
+| `git merge <rama>` | Fusiona los cambios de otra rama en la actual. | `git merge dev` |
+| `git branch -d <rama>` | Elimina una rama local. | `git branch -d vieja` |
+
+---
+
+## 🔄 **Sincronización con repositorios remotos**
+
+| Comando | Descripción | Ejemplo |
+|----------|--------------|---------|
+| `git remote -v` | Muestra los repositorios remotos configurados. | `git remote -v` |
+| `git remote add origin <url>` | Conecta el repositorio local con uno remoto (GitHub, GitLab, etc.). | `git remote add origin https://github.com/CelisHD/proyecto.git` |
+| `git push origin <rama>` | Sube tus commits al repositorio remoto. | `git push origin main` |
+| `git pull origin <rama>` | Descarga y fusiona cambios del repositorio remoto. | `git pull origin main` |
+| `git fetch` | Descarga cambios del remoto sin fusionarlos. | `git fetch` |
+| `git clone <url>` | Clona un repositorio remoto. | `git clone https://github.com/CelisHD/proyecto.git` |
+
+---
+
+## 🧭 **Revisión y control**
+
+| Comando | Descripción | Ejemplo |
+|----------|--------------|---------|
+| `git diff` | Muestra las diferencias entre archivos modificados y el último commit. | `git diff` |
+| `git diff --staged` | Muestra las diferencias preparadas para commit. | `git diff --staged` |
+| `git log --graph --oneline --decorate` | Visualiza la historia del proyecto con ramas. | `git log --graph --oneline --decorate` |
+| `git blame <archivo>` | Muestra quién modificó cada línea de un archivo. | `git blame app.js` |
+| `git show` | Muestra los cambios de un commit específico. | `git show 5f2a3b1` |
+
+---
+
+## 🔁 **Deshacer cambios y restaurar versiones**
+
+| Comando | Descripción | Ejemplo |
+|----------|--------------|---------|
+| `git restore <archivo>` | Restaura un archivo a su versión anterior. | `git restore main.py` |
+| `git restore --staged <archivo>` | Quita un archivo del área de preparación. | `git restore --staged index.html` |
+| `git reset <commit>` | Vuelve el proyecto a un commit anterior. | `git reset 1a2b3c` |
+| `git revert <commit>` | Crea un commit nuevo que revierte los cambios de otro. | `git revert 5e6f7g8` |
+
+---
+
+## 🧮 **Alias útiles (opcional)**
+
+Puedes crear **atajos personalizados** para trabajar más rápido:
+
+```bash
+git config --global alias.s status
+git config --global alias.l "log --oneline --graph --decorate"
+git config --global alias.c "commit -m"
